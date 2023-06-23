@@ -22,7 +22,8 @@ The Bail Bond Project aims to increase fairness, openness, and efficiency in the
 ### Research Questions
 The project aims to answer the following research questions:
 
-- Can the Bail decisions be predicted?
+- Can we predict the release decision (e.g., bail granted, bail denied)?
+- What are the factors that affect the bail decisions being made?
 - Can the Bail amount be estimated?
 
 ### Data Sources
@@ -49,7 +50,7 @@ The project will employ various techniques and models, including but not limited
 
 Descriptive statistics and data visualization to explore patterns and distributions.
 Logistic regression to analyze the factors influencing pretrial release decisions.
-Machine learning algorithms such as decision trees, random forests, or support vector machines to develop predictive models for pretrial release decisions and recidivism rates
+Machine learning algorithms such as decision trees, random forests, or support vector machines to develop predictive models for pretrial release decisions and bail amounts.
 
 ### Model Evaluation and Comparision
 The performance of the models will be evaluated using appropriate evaluation metrics, such as accuracy, precision, recall, and F1-score. Cross-validation techniques will be employed to assess the models' robustness and generalizability. The models will be compared based on their predictive accuracy, fairness, and ability to mitigate biases in pretrial release decisions.
@@ -69,4 +70,4 @@ Frameworks like Streamlit, Dash, or Flask can be used to deliver the trained mod
 Let's sum up by saying that the goal of the Bail Bond Project is to address the problem of pretrial release and its effects on the criminal justice system. This study seeks to further fairness, openness, and efficiency in the pretrial release procedure by investigating the variables that affect choices about pretrial release, assessing biases and disparities, and looking at the effect on recidivism rates. The initiative seeks to give policymakers and stakeholders useful information and advice by utilizing descriptive statistics, logistic regression, and machine learning algorithms. The ultimate objective is to promote a greater comprehension of the problem, create resources for informed decision-making, and contribute to the development of a criminal justice system that is more equal and efficient.
 
 ### References
-- [Kaggle: Detecting Fake News Step by Step](https://ww2.nycourts.gov/pretrial-release-data-33136)
+- https://ww2.nycourts.gov/pretrial-release-data-33136
