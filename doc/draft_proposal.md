@@ -26,3 +26,58 @@ Given how hard it is to decide bail, this project aims to model bail decisions u
 
 Two different parts of the information will be looked at in this project. The first goal is to look at the records to see if bail has been set. The second goal of the project is to make models that can predict if bail will be set and how much it will be. The goal of the prediction models is to create a way for people to put their information (age, gender, charge, severity of charge, previous crimes, etc.) and find out what their bail will be.
 
+**Data Source and Quality:**
+
+The dataset used for this project is retrieved from the official website of the New York State Unified Court System at https://ww2.nycourts.gov/pretrial-release-data-33136. The source is highly credible as it is provided directly by the court system. The dataset is of high quality, containing comprehensive information related to pretrial release decisions in New York. The size of the dataset and specific attributes will be further explored during the data analysis phase.
+
+**Unit of Analysis and Dataset Size:**
+
+The unit of analysis in this project is individual cases within the criminal justice system. Each case represents a unique observation, capturing information such as defendant characteristics, offense details, pretrial release decisions, and case outcomes. The dataset contains a substantial number of observations, allowing for robust analysis and modeling.
+The dataset is a .csv file that is 194MB in size and has 108 columns and 284096 rows.
+
+**Variables/Measures:**
+
+This data set contains information from about 63 courts in and around New York City. Different courts can make different choices about arraignment release, and the exact details were also written down in the data. We have separated the data into groups to test different theories based on our information. Gender, Race, Ethnicity, Age at crime and arrest, Arraign Charge Category, Representation Type in court, Release Decision at Arraign, Bail Amount, and Arrest Type are the most used columns in the dataset for all theories. 
+
+The variables/measures planned for analysis include:
+
+- Defendant demographics (age, gender, race, etc.)
+- Offense characteristics (type of offense, severity, etc.)
+- Pretrial release decisions (bail amount, release type, conditions, etc.)
+- Case outcomes (dismissal, conviction, etc.)
+- Recidivism rates
+- 
+These variables are essential for understanding the factors influencing pretrial release decisions and evaluating their impact on case outcomes and recidivism rates.
+
+**Techniques/Models:**
+
+The project will employ various techniques and models, including but not limited to:
+
+Descriptive statistics and data visualization to explore patterns and distributions.
+Logistic regression to analyze the factors influencing pretrial release decisions.
+Machine learning algorithms such as decision trees, random forests, or support vector machines to develop predictive models for pretrial release decisions and recidivism rates.
+
+**Model Evaluation and Comparison:**
+
+The performance of the models will be evaluated using appropriate evaluation metrics, such as accuracy, precision, recall, and F1-score. Cross-validation techniques will be employed to assess the models' robustness and generalizability. The models will be compared based on their predictive accuracy, fairness, and ability to mitigate biases in pretrial release decisions.
+
+**Intended Outcomes:**
+
+The project aims to achieve the following outcomes:
+
+Gain a better understanding of the factors influencing pretrial release decisions.
+Identify potential biases or disparities in the pretrial release process.
+Develop predictive models to assist in fair and accurate pretrial release decisions.
+Provide insights and recommendations to policymakers and criminal justice stakeholders for improving the pretrial release process.
+
+**Deployment of Trained Model:**
+
+The trained model can be deployed through a web application or dashboard using frameworks such as Streamlit, Dash, or Flask. This would enable users, such as judges, lawyers, or policymakers, to input relevant case information and receive predictions or recommendations for pretrial release decisions. The deployment would enhance decision-making processes and promote transparency and fairness in the pretrial release system.
+
+**References:**
+
+- Division of Technology & Court Research. (2022). Pretrail Release Data [CSV]. Retrieved from
+https://ww2.nycourts.gov/pretrial-release-data-33136
+
+- Gladwell, M. (2019). Getting to Know der Fuhrer. In Talking to Strangers (pp. 36–43).
+essay, Little, Brown, and Company.
