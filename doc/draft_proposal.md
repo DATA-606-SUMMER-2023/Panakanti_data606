@@ -46,7 +46,7 @@ The variables/measures planned for analysis include:
 - Pretrial release decisions (bail amount, release type, conditions, etc.)
 - Case outcomes (dismissal, conviction, etc.)
 - Recidivism rates
-- 
+
 These variables are essential for understanding the factors influencing pretrial release decisions and evaluating their impact on case outcomes and recidivism rates.
 
 **Techniques/Models:**
