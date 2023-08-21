@@ -4,10 +4,11 @@
 
 **Term:** Summer 2023
 
-Presentation Link:
+**Presentation Link:**
 https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/99a51421966d36cebed0aabc72bf544676b5be38/doc/BAIL%20STATUS%20AND%20AMOUNT%20PREDICTION.pptx
 
-YouTube Link: ---link---
+**YouTube Link:** 
+---link---
 
 ## Introduction:
 
