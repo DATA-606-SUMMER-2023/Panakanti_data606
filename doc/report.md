@@ -1,7 +1,7 @@
 # Predicting Bail Status and Bail Amount
 
 Presentation Link:
----link---
+https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/99a51421966d36cebed0aabc72bf544676b5be38/doc/BAIL%20STATUS%20AND%20AMOUNT%20PREDICTION.pptx
 
 YouTube Link: ---link---
 
@@ -37,12 +37,140 @@ Source link: https://ww2.nycourts.gov/pretrial-release-data-33136
 
 ## Data Analysis and Visualizations:
 
-![image](https://github.com/vasavi0417/Veerla_Data606/assets/42056699/de6940d8-bca3-42a4-b9fc-566dc836a2e5)
+Firstly, the dataset is distributed and analyzed to determine the bail outcomes. And before building the Machine Learning Model on the tidy dataset, the correlation between different features/factors and Bail status is analyzed. The seaborne library is used to plot the ages of criminals, revealing that most offenders fall between the ages of 25 and 35. The bail amount is allocated based on arraignment charge categories and displayed in a bar plot. And before building the Machine Learning Model on the tidy dataset, the correlation between different features/factors and Bail amount is analyzed. The dataset is distributed and analyzed to determine the bail amount based upon the Top charge severity at arrest. 
 
+![image](https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/e642ee84fb0c965f533daed31ac3b278cba400dc/Data/images/overview.png)
+![image](https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/e642ee84fb0c965f533daed31ac3b278cba400dc/Data/images/top10.png)
+![image](https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/8c15cdf4e1dbc9d7dc0216d8172e8619bba74b69/Data/images/demographics.png)
+![image](https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/993cc77b4190b7b12266dfdf63e5b8a8b6e7625d/Data/images/severity_at_arrest.png)
 
+## Modelling:
+### Predicting Bail Status
 
+This study employed three models, each utilizing a distinct approach to test the initial hypothesis. The findings of all three models will be compared, and the model that best fits the data will be fine-tuned to enhance the accuracy of the results. 
 
+1. Baseline Model:
+   The training process of the dataset was initiated with the utilization of the Dummy Classifier, which employs straightforward rules to generate predictions. This model was constructed as a foundational reference point to compare its outcomes with other models.
+   Our model has achieved a baseline accuracy of 71.18%, which cannot be surpassed by any other model. 
 
+2. Logistic Regression:
+   The logistic regression algorithm, which falls under supervised learning classification algorithms, is employed to estimate the probability of a target variable. Logistic regression is the most effective approach when the target variable is categorical.  
+
+       Accuracy Score: 72.5% 
+
+       Precision Score: 73.94% 
+
+       F1 Score: 83.03% 
+
+The Logistic regression model demonstrates an accuracy rate of 72.5%, surpassing that of the baseline model. Furthermore, our precision value indicates the accuracy in predicting favorable outcomes within the dataset. 
+
+3. Gaussian Naive Bayes Model:
+The Gaussian Naïve Bayes model is a probabilistic classifier that assumes the features are independent and normally distributed. The Naive Bayes algorithm is a straightforward approach for constructing classifiers, which are models designed to assign class labels to issue situations represented as feature vectors. These class labels are chosen from a finite range of options. Based on the labeled training and test data provided, the model yielded the following outcomes. 
+
+        Accuracy Score:71.04% 
+        Precision Score: 74.11% 
+        F1 Score: 81.73% 
+
+The accuracy score got from the Gaussian Naïve Bayes is less than the Logistic Regression Model. Also, the F1 score is less than the Logistic regression model.
+
+4. K-Nearest Neighbours (KNN) Model:
+The K-Nearest Neighbours (KNN) algorithm is utilized for the classification of new data points. This is achieved by identifying the K-Nearest Neighbors from the training dataset and determining the class of the new data point based on the majority class among its neighbors. The model was assigned a k-value of 7 for the purpose of training and testing our data, resulting in the following output. 
+
+        Accuracy Score: 76.39% 
+        Precision Score: 79.67% 
+        F1 Score: 84.38% 
+
+The K-nearest neighbors (KNN) method has demonstrated superior accuracy compared to the aforementioned models. The Precision score exhibited a significant rise compared to other models' scores. In order to improve the outcomes, we shall adjust the parameters. 
+
+Model Comparision:
+
+As we have created different models, we will compare their results using graphs to determine the best fit for our dataset. We will use two charts - one to compare the predicted scores of the models and the other to compare the ROC curves. 
+
+![image](https://github.com/SnigdhaPanakanti/Panakanti_data606/blob/99a51421966d36cebed0aabc72bf544676b5be38/Data/images/Model_Comparision.png)
+
+From the above chart, we can say that the K-NN algorithm is the best fitting model for our dataset except for the Recall value. So, we will choose the K-NN model further to tune the parameter to obtain better scores and predictions. 
+In the K-NN algorithm, we have tuned the n_neighbors value to 5 and found that the model provides better results compared to previous results. 
+
+    Accuracy: 0.7736451207922186
+    F1 Score: 0.8486474612439592
+    Precision: 0.8090650710545999
+    Recall: 0.8923021084237965
+Further, have modified the split of the dataset into testing and training as 20% and 80% respectively. Fed the model with the new test and train dataset and the model provided a great accuracy score, F-1 score, and precision score above 80%. 
+
+    Accuracy: 0.8284582893347413
+    F1 Score: 0.8819761457891868
+    Precision: 0.8635210432720806
+    Recall: 0.9012373174956694
+
+### Predicting Bail Amount
+Here, I have conducted four regression analyses using various algorithms to test the hypotheses. To preprocess the model, we remove dummy values and some extra features from the dataset such as 'Age_at_Crime', 'Age_at_Arrest', 'Judge_Name', 'Arrest_Type', 'Top_Charge_at_Arrest,’ Violent_Felony_Ind', 'Representation_Type',"Top_Charge_at_Arrest", "Top_Charge_Weight_at_Arrest", 'Release Decision at Arraign', 'Year.' 
+The columns 'Age','Def_Attended_Sched_Pretrials',"prior_vfo_cnt", "prior_nonvfo_cnt", "prior_misd_cnt" were scaled to model the model-feeder. To finish up the data pre-processing to provide input to the models, we will split the dataset into two datasets training and testing data. Here, we have divided the dataset as 30% and 70% for Testing and Training, respectively. 
+
+1. Linear Regression Model:
+Two linear regression models were performed: one with prior offenses and one without. The metrics for each model are listed below. 
+
+  Model 1: 
+    
+    Features: Crime, Race, Gender, Prior offenses, Age, Pretrials attended, Court ORI 
+    R2: -8.362228404040309e+19 
+    MSE: 6.950283441536962e+18 
+
+  Model 2: 
+
+    Features: Crime, Race, Gender, Court ORI 
+    R2: -3.042231583411607e+21 
+    MSE: 2.4994588369169252e+20 
+
+Decision Regression Model: 
+
+Two Decision regression models were performed: one with prior offenses and one without. The metrics for each model are listed below.  
+
+  Model 1: 
+
+    Features: Crime, Race, Gender, Prior offenses, Age, Pretrials attended, Court ORI 
+    MSE: 0.06643128075622728        
+    R2: 0.20073253482500297 
+
+   Model 2: 
+
+    Features: Crime, Race, Gender, Court ORI 
+    MSE: 0.04463458242755976       
+    R2: 0.4567274548877708 
+
+3. K Nearest Neighbours Regression: 
+
+Two KNN regression models were performed: one with prior offenses and one without. The metrics for each model are listed below. 
+
+  Model 1: 
+
+    Features: Crime, Race, Gender, Prior offenses, Age, Pretrials attended, Court ORI 
+    R2: 0.4574613478907559 
+    MSE: 0.04509321233472595 
+
+  Model 2: 
+
+    Features: Crime, Race, Gender, Court ORI 
+    R2: 0.4623347733133504 
+    MSE: 0.044173892266211 
+
+SVR Model: 
+
+Two SVR models were performed: one with prior offenses and one without. The metrics for each model are listed below.  
+
+  Model 1: 
+
+    Features: Crime, Race, Gender, Prior offenses, Age, Pretrials attended, Court ORI 
+    R2: 0.5403899320034418 
+    MSE: 0.03820058590622487   
+
+  Model 2: 
+
+    Features: Crime, Race, Gender, Court ORI 
+    R2: 0.5269402945572196 
+    MSE: 0.03886598468063764 
+
+## Conclusion:
+From this dataset, I was able to create successful models for each of our two goals: predicting bail and bail amount. The predicting bail model and the predicting bail amount had an 80% accuracy. To improve these models, I would like to collect more data, continue to finetune parameters, and update the data used as more cases come in. To expand the project I would like to create prediction models for other state judiciaries and compare the bail data available to find trends between states. The purpose of these models is to use them to create an interface that people can interact with to predict bail based on given conditions: age, gender, race, arrest type, prior criminal arrests, etc. The intent of making this interface is to help people understand what to expect as their bail at an arraignment, and to better inform the population about bail setting. 
 
 
 
